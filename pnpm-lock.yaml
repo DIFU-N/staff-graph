@@ -5,9 +5,18 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@faker-js/faker':
+    specifier: ^8.0.2
+    version: registry.npmjs.org/@faker-js/faker@8.0.2
+  chart.js:
+    specifier: ^4.3.0
+    version: registry.npmjs.org/chart.js@4.3.0
   react:
     specifier: ^18.2.0
     version: registry.npmjs.org/react@18.2.0
+  react-chartjs-2:
+    specifier: ^5.2.0
+    version: registry.npmjs.org/react-chartjs-2@5.2.0(chart.js@4.3.0)(react@18.2.0)
   react-dom:
     specifier: ^18.2.0
     version: registry.npmjs.org/react-dom@18.2.0(react@18.2.0)
@@ -350,6 +359,13 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  registry.npmjs.org/@faker-js/faker@8.0.2:
+    resolution: {integrity: sha512-Uo3pGspElQW91PCvKSIAXoEgAUlRnH29sX2/p89kg7sP1m2PzCufHINd0FhTXQf6DYGiUlVncdSPa2F9wxed2A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@faker-js/faker/-/faker-8.0.2.tgz}
+    name: '@faker-js/faker'
+    version: 8.0.2
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
+    dev: false
+
   registry.npmjs.org/@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.10.tgz}
     name: '@humanwhocodes/config-array'
@@ -421,6 +437,12 @@ packages:
       '@jridgewell/resolve-uri': registry.npmjs.org/@jridgewell/resolve-uri@3.1.0
       '@jridgewell/sourcemap-codec': registry.npmjs.org/@jridgewell/sourcemap-codec@1.4.14
     dev: true
+
+  registry.npmjs.org/@kurkle/color@0.3.2:
+    resolution: {integrity: sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@kurkle/color/-/color-0.3.2.tgz}
+    name: '@kurkle/color'
+    version: 0.3.2
+    dev: false
 
   registry.npmjs.org/@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz}
@@ -963,6 +985,15 @@ packages:
       ansi-styles: registry.npmjs.org/ansi-styles@4.3.0
       supports-color: registry.npmjs.org/supports-color@7.2.0
     dev: true
+
+  registry.npmjs.org/chart.js@4.3.0:
+    resolution: {integrity: sha512-ynG0E79xGfMaV2xAHdbhwiPLczxnNNnasrmPEXriXsPJGjmhOBYzFVEsB65w2qMDz+CaBJJuJD0inE/ab/h36g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/chart.js/-/chart.js-4.3.0.tgz}
+    name: chart.js
+    version: 4.3.0
+    engines: {pnpm: '>=7'}
+    dependencies:
+      '@kurkle/color': registry.npmjs.org/@kurkle/color@0.3.2
+    dev: false
 
   registry.npmjs.org/chokidar@3.5.3:
     resolution: {integrity: sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz}
@@ -1986,6 +2017,19 @@ packages:
     name: queue-microtask
     version: 1.2.3
     dev: true
+
+  registry.npmjs.org/react-chartjs-2@5.2.0(chart.js@4.3.0)(react@18.2.0):
+    resolution: {integrity: sha512-98iN5aguJyVSxp5U3CblRLH67J8gkfyGNbiK3c+l1QI/G4irHMPQw44aEPmjVag+YKTyQ260NcF82GTQ3bdscA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react-chartjs-2/-/react-chartjs-2-5.2.0.tgz}
+    id: registry.npmjs.org/react-chartjs-2/5.2.0
+    name: react-chartjs-2
+    version: 5.2.0
+    peerDependencies:
+      chart.js: ^4.1.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      chart.js: registry.npmjs.org/chart.js@4.3.0
+      react: registry.npmjs.org/react@18.2.0
+    dev: false
 
   registry.npmjs.org/react-dom@18.2.0(react@18.2.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz}
