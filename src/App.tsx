@@ -14,7 +14,7 @@ function App() {
     fetchDivisionCallback();
   }, [fetchDivisionCallback]);
   return (
-    <div className="bg-black">
+    <div className="w-full bg-black flex justify-center">
       <Chart />
     </div>
   )

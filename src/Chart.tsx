@@ -46,8 +46,6 @@ const labels = [
   "Genesis Restaurant",
   "Genesis Catering",
   "Genesis Group",
-  "Industrial Catering",
-  "Trans-Amadi",
 ];
 
 const generateBrightColor = () => {
@@ -123,11 +121,16 @@ export const DoughnutData = {
     },
   ],
 };
+
 const Chart = () => {
   return (
-    <div className="flex gap-10 text-white h-[500px] w-[700px]">
-      <Bar options={options} data={data} width={500} height={500} />
-      <Doughnut data={DoughnutData} />
+    <div className="grid md:flex text-white justify-center">
+      <div>
+        <Bar options={options} data={data} width={400} height={400} />
+      </div>
+      <div>
+        <Doughnut data={DoughnutData} width={400} height={400} />
+      </div>
     </div>
   );
 };
