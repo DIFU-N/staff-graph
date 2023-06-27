@@ -1,10 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { Department } from '../types';
+import { Division } from '../types';
 
 const initialState = {
     loading: false,
-    departmentList: [] as Department[],
+    divisionList: [] as Division[],
     error: '' as string || undefined,
 }
 
@@ -25,42 +25,41 @@ export const login = async () => {
     return response.data.data.token;
   }
 
-export const fetchDepartment = createAsyncThunk('departments/fetchDepartment', async () => {
+export const fetchDivision = createAsyncThunk('divisions/fetchDivision', async () => {
     const token = await login();
     return await axios
-    .get('https://genhive.onrender.com/department', {
+    .get('https://genhive.onrender.com/division', {
       headers: {
         'Content-Type': 'multipart/form-data',
         'Authorization': `Bearer ${token}`
       }
     })
     .then((response) =>  {
-        console.log(response.data.data);
         return response.data.data.map((user: {}) => user)
     })
 })
 
-export const departmentSlice = createSlice({
-    name: 'department',
+export const divisionSlice = createSlice({
+    name: 'division',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchDepartment.pending, state => {
+        builder.addCase(fetchDivision.pending, state => {
             state.loading = true
         })
-        builder.addCase(fetchDepartment.fulfilled, (state, action) => {
+        builder.addCase(fetchDivision.fulfilled, (state, action) => {
             state.loading = false
-            state.departmentList = [...action.payload]
-            console.log(state.departmentList);
+            state.divisionList = [...action.payload]
+            console.log(state.divisionList);
             state.error = ''
         })
-        builder.addCase(fetchDepartment.rejected, (state, action) => {
+        builder.addCase(fetchDivision.rejected, (state, action) => {
             state.loading = false
-            state.departmentList = []
+            state.divisionList = []
             console.log(action.error.message);
             state.error = action.error.message
         })
     }
 });
 
-export default departmentSlice.reducer;
+export default divisionSlice.reducer;

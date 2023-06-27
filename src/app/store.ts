@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import departmentReducer from "./department";
+import divisionReducer from "./division";
 
 const store = configureStore({
     reducer: {
-        department: departmentReducer
+        division: divisionReducer
     }
 })
+
+export type AppDispatch = typeof store.dispatch;
 
 export default store;
